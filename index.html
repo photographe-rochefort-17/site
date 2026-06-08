@@ -43,7 +43,7 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 1.8rem; /* Taille réduite */
             margin-top: 0;
             margin-bottom: 12px;
             color: var(--text-main);
@@ -51,7 +51,7 @@
         }
 
         p {
-            font-size: 1.15rem;
+            font-size: 0.95rem; /* Taille réduite */
             color: var(--text-muted);
             line-height: 1.6;
             margin-bottom: 30px;
@@ -61,17 +61,30 @@
         .image-container {
             width: 100%;
             aspect-ratio: 3 / 2; /* Force le rapport de forme 3:2 */
-            margin: 30px 0;
+            margin-top: 30px;
+            margin-bottom: 15px; /* Espacement réduit pour accueillir la bande suivante */
             border-radius: 8px;
             overflow: hidden;
             background-color: #2d2d34; /* Fond d'attente gris */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         }
 
-        .image-container img {
+        /* Nouveau conteneur pour la photo au format panoramique 13:1 */
+        .image-container-wide {
+            width: 100%;
+            aspect-ratio: 13 / 1; /* Force le rapport de forme 13:1 */
+            margin-top: 15px;
+            margin-bottom: 30px;
+            border-radius: 4px; /* Bordure légèrement plus fine pour le format panoramique */
+            overflow: hidden;
+            background-color: #2d2d34;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-container img, .image-container-wide img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Rempli l'espace sans déformer l'image */
+            object-fit: cover; /* Remplit l'espace sans déformer l'image */
             display: block;
         }
 
@@ -90,7 +103,7 @@
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.9rem; /* Taille réduite */
             transition: background-color 0.2s, transform 0.2s;
             border: none;
             cursor: pointer;
@@ -122,8 +135,14 @@
             je suis disponible pour vous accompagner dans vos projets photographiques.<br>
             N'hésitez pas à me contacter pour tout renseignement.</p>
         
+        <!-- Première zone d'image (Format 3:2) -->
         <div class="image-container">
             <img src="ma-photo.jpg" alt="Photographie de présentation de Davy Jourget, photographe à Rochefort, Charente-Maritime (17)">
+        </div>
+
+        <!-- Nouvelle zone d'image (Format panoramique 13:1) -->
+        <div class="image-container-wide">
+            <img src="ma-photo-large.jpg" alt="Bandeau photographique de Davy Jourget">
         </div>
 
         <div class="links">
